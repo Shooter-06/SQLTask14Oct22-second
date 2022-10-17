@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         delBTN=findViewById(R.id.button3);
         viewTN=findViewById(R.id.button4);
 
+        mydb = new DatabaseHelper(this);
+
         addBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

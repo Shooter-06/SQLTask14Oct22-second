@@ -42,9 +42,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean addProducts(String name, String brand, String price, String reviews){
         SQLiteDatabase db= getWritableDatabase();
         ContentValues contentValues= new ContentValues();
-        contentValues.put("Name", name);
-        contentValues.put("Brand", brand);
-        contentValues.put("Price", price);
+        contentValues.put("name", name);
+        contentValues.put("brand", brand);
+        contentValues.put("price", price);
         contentValues.put("Reviews", reviews);
 
         db.insert("product", null, contentValues);
@@ -55,11 +55,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean updateProducts(String id, String name, String brand, String price, String reviews){
         SQLiteDatabase db= getWritableDatabase();
         ContentValues contentValues= new ContentValues();
-        contentValues.put("ID", id);
-        contentValues.put("Name", name);
-        contentValues.put("Brand", brand);
-        contentValues.put("Price", price);
-        contentValues.put("Reviews", reviews);
+        contentValues.put(COL_1, id);
+        contentValues.put(COL_2, name);
+        contentValues.put(COL_3, brand);
+        contentValues.put(COL_4, price);
+        contentValues.put(COL_5, reviews);
 
         db.update(TABLE_NAME, contentValues, "ID = ? ", new String[]{id});
         return true;
@@ -72,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor viewProducts(){
         SQLiteDatabase db= this.getWritableDatabase();
-        Cursor res=  db.rawQuery("select * from " + TABLE_NAME, null);
+        Cursor res=  db.rawQuery("select * from  product", null);
         return res;
     }
 }
