@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
                         ,priceTx.getText().toString(),reviewTx.getText().toString());
 
                 if(isInsterted ==true){
-                    Toast.makeText(MainActivity.this, "Data is inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Data is inserted", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(MainActivity.this, "Data is not inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Data is not inserted", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
                         ,priceTx.getText().toString(),reviewTx.getText().toString());
 
                 if(isUpdated ==true){
-                    Toast.makeText(MainActivity.this, "Data is updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Data is updated", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(MainActivity.this, "Data is not updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Data is not updated", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 Integer isdeleted = mydb.deleteProducts(idTx.getText().toString());
 
                 if(isdeleted >0){
-                    Toast.makeText(MainActivity.this, "Data has deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Data has deleted", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(MainActivity.this, "Data has not deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Data has not deleted", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                 StringBuffer buffer= new StringBuffer();
                 while (res.moveToNext()) {
-                    buffer.append("ID " + res.getString(0) + " \n ");
+                    buffer.append("ID " + res.getString(0) + " \n ") ;
                     buffer.append("Name " + res.getString(1) + " \n ");
                     buffer.append("Brand " + res.getString(2) + " \n ");
                     buffer.append("Price " + res.getString(3) + " \n ");
