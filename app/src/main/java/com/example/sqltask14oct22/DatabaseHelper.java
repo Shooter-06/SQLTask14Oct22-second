@@ -42,10 +42,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean addProducts(String name, String brand, String price, String reviews){
         SQLiteDatabase db= getWritableDatabase();
         ContentValues contentValues= new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("brand", brand);
-        contentValues.put("price", price);
-        contentValues.put("Reviews", reviews);
+        contentValues.put(COL_2, name);
+        contentValues.put(COL_3, brand);
+        contentValues.put(COL_4, price);
+        contentValues.put(COL_5, reviews);
 
         db.insert("product", null, contentValues);
         db.close();
@@ -72,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor viewProducts(){
         SQLiteDatabase db= this.getWritableDatabase();
-        Cursor res=  db.rawQuery("select * from  product", null);
+        Cursor res=  db.rawQuery(" select * from  product ", null);
         return res;
     }
 }

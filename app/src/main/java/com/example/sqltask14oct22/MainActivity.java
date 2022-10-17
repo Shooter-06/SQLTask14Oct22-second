@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     buffer.append("Price " + res.getString(3) + " \n ");
                     buffer.append("Review " + res.getString(4) + " \n ");
                 }
-                ShowMessage("Data", buffer.toString());
+                ShowMessage("**Data**", buffer.toString());
             }
         });
     }
